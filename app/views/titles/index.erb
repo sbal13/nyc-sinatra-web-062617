@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Titles Index</title>
+</head>
+<body>
+	<h1>All Titles</h1>
+	<ul>
+		<% @titles.each do |title| %>
+			<li><%= title.name %></li>
+		<% end %>
+	</ul>
+</body>
+</html>

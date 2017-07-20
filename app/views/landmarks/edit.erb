@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Landmark Entry</title>
+</head>
+<body>
+	<form method='POST' action='/landmarks/<%=@landmark.id%>'>
+		<p>Landmark Name: <input id="name" type="text" name="landmark[name]" value="<%=@landmark.name%>"></p>
+		<p>Year Completed: <input type="number" name="landmark[year_completed]" value="<%=@landmark.year_completed%>" id="year_completed"></p>
+		<br>
+
+
+		<p>Create New Figure <input type="radio" name="entry_type" value="Create"></p>
+		<p>New Figure Name: <input type="text" name="figure[name]"></p>
+
+
+		<br>
+
+
+		<p>Select Existing Figure <input type="radio" name="entry_type" value="Select"></p>
+
+		<select name="landmark[figure_id]">
+			<%if @landmark.figure != nil%> 
+			<option value="<%=@landmark.figure.id%>"><%=@landmark.figure.name%>
+			<%end%> 	
+			</option>
+			<%@figures.each do |figure|%>
+				<option value="<%=figure.id%>"><%=figure.name%></option>
+			<%end%>
+		</select>
+
+		<input type="submit" value="Edit Landmark">
+	</form>
+</body>
+</html>

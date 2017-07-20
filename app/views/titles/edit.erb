@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Title Entry</title>
+</head>
+<body>
+	<form method='POST' action='/titles/<%=@title.id%>'>
+		<input type="hidden" value="patch" name="_method">
+
+		<input type="text" name="title[name]" value="<%=@title.name%>">
+		<input type="submit" value="Edit Title">
+	</form>
+</body>
+</html>

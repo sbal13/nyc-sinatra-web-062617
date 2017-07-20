@@ -2,9 +2,18 @@
   <tr>
     <th>Name</th>
     <th>Year Completed</th>
+
+    <th>Figure</th>
   </tr>
   <tr>
     <td><%= @landmark.name %></td>
     <td><%= @landmark.year_completed %></td>
+    <td>
+	    <%if @landmark.figure != nil%>
+	    <%= @landmark.figure.name %>
+	    <%else%>
+	    	No Figure
+	    <%end%>
+    </td>
   </tr>
 <table>
